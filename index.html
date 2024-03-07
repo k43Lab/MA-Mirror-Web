@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="//fnj.1l1.icu/unpkg/element-ui@2.15.14/lib/theme-chalk/index.css" />
     <script src="//fnj.1l1.icu/unpkg/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='//fnj.1l1.icu/unpkg/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/index.css"
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <div id="menu" style="display: flex; justify-content: space-between; align-items: center;padding: 0px 20px 0px 20px;border-bottom: 1px solid #323030;">
@@ -67,19 +67,30 @@
             <div style="color: white;font-size: 25px;"><i class='bx bx-server'></i> Service | 服务</div>
             <div style="display: flex;justify-content: space-between;margin-top: 10px;">
             <div class="cdn">
-                <div style="color: white;font-size: 18px;">FAST NYA JUST | CDN 站镜像</div>
+                <div class="cdn-tittle" style="color: white;font-size: 18px;">FAST NYA JUST | CDN 站镜像</div>
                 <div id="description-1">
                     <el-collapse v-model="activeNames" @change="handleChange">
-                      <el-collapse-item title="1" name="1">
-                        <div>1</div>
-                        <div>1</div>
+                      <el-collapse-item title="简介" name="1" style="font-size: 16px;">
+                        <div>目前我们提供 https://unpkg.com/，https://cdn.jsdelivr.net/，https://cdnjs.cloudflare.com/ 的镜像，缓存时效12小时。</div>
                       </el-collapse-item>
+                    </el-collapse>
+                    <el-collapse v-model="activeNames" @change="handleChange">
+                        <el-collapse-item title="开源项目发布" name="2" style="font-size: 16px;">
+                          <div>FNJ（Fast Nya Just）已经在Github开源，您可以浏览<el-tooltip class="item" effect="dark" content="Github: Fast Nya Just - CDN站镜像" placement="top"><div>https://github.com/k43Lab/FNJ。</div></el-tooltip></div>
+                        </el-collapse-item>
                     </el-collapse>
                 </div>
             </div>
             <div class="cdn">
-                <div style="color: white;font-size: 18px;">Github 加速</div>
-                <div style="color: rgb(91, 91, 91);font-size: 14px;margin-top: 10px;">XXXXX</div>
+                <div class="cdn-tittle" style="color: white;font-size: 18px;">Github 加速</div>
+                <div id="description-2">
+                    <el-collapse v-model="activeNames" @change="handleChange">
+                      <el-collapse-item title="简介" name="1" style="font-size: 16px;">
+                        <div>我们可以提供文件以及API的加速。</div>
+                      </el-collapse-item>
+                    </el-collapse>
+                </div>
+            </div>
             </div>
             </div>
         </div>
@@ -124,6 +135,27 @@
         }
         var Ctor = Vue.extend(Main)
         new Ctor().$mount('#description-1')
+      </script>
+
+        <script>
+            var Main = {
+                data() {
+                return {
+                    activeNames: ['1']
+                };
+                },
+                methods: {
+                handleChange(val) {
+                    console.log(val);
+                }
+                }
+            }
+            var Ctor = Vue.extend(Main)
+            new Ctor().$mount('#description-2')
+        </script>
+
+      <script>
+        new Vue().$mount('#word-1')
       </script>
 </body>
 </html>
