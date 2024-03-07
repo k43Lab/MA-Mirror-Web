@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MA Mirror();</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="//fnj.1l1.icu/unpkg/vue@2/dist/vue.js"></script>
+    <script src="//fnj.1l1.icu/unpkg/element-ui@2.15.14/lib/index.js"></script>
+    <link rel="stylesheet" href="//fnj.1l1.icu/unpkg/element-plus/dist/index.css" />
+    <link rel="stylesheet" href="//fnj.1l1.icu/unpkg/element-ui@2.15.14/lib/theme-chalk/index.css" />
+    <script src="//fnj.1l1.icu/unpkg/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='//fnj.1l1.icu/unpkg/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/index.css"
+</head>
+<body>
+    <div id="menu" style="display: flex; justify-content: space-between; align-items: center;padding: 0px 20px 0px 20px;border-bottom: 1px solid #323030;">
+        <div style="display: flex;align-items: center;">
+            <img src="https://element.eleme.cn/favicon.ico" style="margin-right: 15px;" alt="MA Mirror" height="30px" width="30px">
+            <p class="poppins-semibold" style="font-size: 15px;color: #ffffff;">MA Mirror</p>
+        </div>
+        
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="background-color: rgb(26 26 26)">
+            <el-menu-item index="1" class="menu-1">首页</el-menu-item>
+            <el-submenu index="2">
+                <template slot="title">使用</template>
+                <el-menu-item index="2-1" class="menu-2">CDN 站镜像</el-menu-item>
+                <el-menu-item index="2-2" class="menu-2">GitHub 文件下载</el-menu-item>
+                <el-menu-item index="2-3" class="menu-2">Github API 加速</el-menu-item>
+            </el-submenu>
+            <el-menu-item index="3" class="menu-1">统计</el-menu-item>
+            <el-menu-item index="4" class="menu-1">服务器状态</el-menu-item>
+            <el-menu-item index="5" class="menu-1">赞助</el-menu-item>
+            <el-divider direction="vertical"></el-divider>
+            <el-menu-item index="6" class="menu-1"><a href="https://github.com/k43Lab/FNJ" target="_blank" ><i class='bx bxl-github'style="font-size: 26px;"></i></a></el-menu-item>
+        </el-menu>
+    </div>
+    
+    <!--大字体-->
+    <div style="justify-content: center;display: flex;border-bottom: 1px solid #323030;padding: 100px;background-image: url(/background.png);">
+    <div class="huge-font">
+        <div>
+            <p class="huge-font-1 poppins-black-italic">MA Mirror;()</p>
+        </div>
+        <div>
+            <p class="huge-font-1 poppins-black-italic">新兴的前端镜像站</p>
+        </div>
+        <div>
+            <p class="huge-font-1 poppins-black-italic">稳定的Github加速服务</p>
+        </div>
+        <div style="padding-top:50px;display: flex;">
+            <button style="width: 200px;margin-right: 20px;">
+                <span>Let's Start</span>
+            </button>
+            <button style="width: 200px;">
+                <span>Know More</span>
+            </button>
+        </div>
+    </div>
+    </div>
+
+    <!--简介-->
+    <div class="description" >
+        <div style="width: 750px;">
+            <div style="color: white;font-size: 25px;"><i class='bx bx-server'></i> Service | 服务</div>
+            <div style="display: flex;justify-content: space-between;margin-top: 10px;">
+            <div class="cdn">
+                <div style="color: white;font-size: 18px;">FAST NYA JUST | CDN 站镜像</div>
+                <div id="description-1">
+                    <el-collapse v-model="activeNames" @change="handleChange">
+                      <el-collapse-item title="1" name="1">
+                        <div>1</div>
+                        <div>1</div>
+                      </el-collapse-item>
+                    </el-collapse>
+                </div>
+            </div>
+            <div class="cdn">
+                <div style="color: white;font-size: 18px;">Github 加速</div>
+                <div style="color: rgb(91, 91, 91);font-size: 14px;margin-top: 10px;">XXXXX</div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
+      <script>
+        var Main = {
+            data() {
+            return {
+                activeIndex: '1',
+                activeIndex2: '1'
+            };
+            },
+            methods: {
+            handleSelect(key, keyPath) {
+                console.log(key, keyPath);
+            }
+            }
+        }
+        var Ctor = Vue.extend(Main)
+        new Ctor().$mount('#menu')
+      </script>
+
+      <script>
+        new Vue().$mount('#line')
+      </script>
+      
+      <script>
+        var Main = {
+            data() {
+            return {
+                activeNames: ['1']
+            };
+            },
+            methods: {
+            handleChange(val) {
+                console.log(val);
+            }
+            }
+        }
+        var Ctor = Vue.extend(Main)
+        new Ctor().$mount('#description-1')
+      </script>
+</body>
+</html>
