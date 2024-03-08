@@ -34,7 +34,7 @@
             <el-menu-item index="4" class="menu-1">服务器状态</el-menu-item>
             <el-menu-item index="5" class="menu-1">赞助</el-menu-item>
             <el-divider direction="vertical"></el-divider>
-            <el-menu-item index="6" class="menu-1"><a href="https://github.com/k43Lab/FNJ" target="_blank" ><i class='bx bxl-github'style="font-size: 26px;"></i></a></el-menu-item>
+            <el-menu-item index="6" class="menu-1"><a href="https://github.com/k43Lab" target="_blank" ><i class='bx bxl-github'style="font-size: 26px;"></i></a></el-menu-item>
         </el-menu>
     </div>
     
@@ -63,7 +63,7 @@
 
     <!--简介-->
     <div class="description" >
-        <div style="width: 750px;">
+        <div style="width: 800px;">
             <div style="color: white;font-size: 25px;"><i class='bx bx-server'></i> Service | 服务</div>
             <div style="display: flex;justify-content: space-between;margin-top: 10px;">
             <div class="cdn">
@@ -96,7 +96,59 @@
         </div>
     </div>
 
+    <!--介绍-->
+    <div class="introduction" id="word-1">
+        <div style="width: 800px;">
+            <div style="color: white;font-size: 25px;"><i class='bx bx-edit-alt'></i> Introduction | 介绍</div>
+            <div style="display: flex;justify-content: space-between;margin-top: 10px;">
+                <div class="description-1" style="margin-top: 10px;line-height: 1.9">
+                    <div class="introduction-tittle" style="color: white;font-size: 18px;">| MA Mirror 是什么？</div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;MA Mirror&nbsp;是由&nbsp;<el-tooltip class="item" effect="dark" content="k43Lab, an organization created by Muska_Ami (夏沫花火zzz🌙), is designed to facilitate communication about technologies." placement="top-start"><span style="color: rgb(96 72 176);">k43Lab</span></el-tooltip>&nbsp;团队推出的新服务。在日常的项目开发，开发者们会使用到某些前端的静态资源，<span class="special-world">UNPKG</span> <span class="special-world">jsDelivr</span>这些是十分常见也是用到最多的。但由于这类资源都在国外，国内访问效果很差。那么，本项目横空出世，有效的帮助开发者们提供一个简单即用的<span style="color: rgb(96 72 176);">公益CDN</span>。
+                    <div class="introduction-tittle" style="padding-top: 5px;border-top: 1px solid #474747;margin-top: 20px;color: white;font-size: 18px;">| 有什么限制吗？</div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;毋庸置疑的，我们<span style="color: rgb(96 72 176);">坚决反对</span>滥用加速服务。例如：加速自己的图床仓库，私人字体文件，私人大文件，视频等。我们会<span style="color: rgb(96 72 176);">严格审查</span>，并及时封禁。
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
 
+    <!--黑名单-->
+    <div class="black-list" id="">
+        <div style="width: 800px;">
+            <div style="color: white;font-size: 25px;"><i class='bx bx-edit-alt'></i> Black List | 黑名单</div>
+            <div style="display: flex;justify-content: space-between;margin-top: 10px;">
+                <div class="black-list-1" style="margin-top: 10px;line-height: 1.9">
+                    <div id="black-list">
+                        <template>
+                          <el-table
+                            :data="tableData"
+                            :header-cell-style="{
+                                background: '#fafafa', color: '#333', fontWeight: '600', fontSize: '14px', }"
+                            height="250"
+                            border
+                            style="width: 100%"> 
+                            <el-table-column
+                              prop="date"
+                              label="日期"
+                              width="180">
+                            </el-table-column>
+                            <el-table-column
+                              prop="name"
+                              label="姓名"
+                              width="180">
+                            </el-table-column>
+                            <el-table-column
+                              prop="address"
+                              label="地址">
+                            </el-table-column>
+                          </el-table>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
 
       <script>
         var Main = {
@@ -156,6 +208,46 @@
 
       <script>
         new Vue().$mount('#word-1')
+      </script>
+
+      <script>
+        var Main = {
+            data() {
+            return {
+                tableData: [{
+                date: 'XX',
+                name: 'XXX',
+                address: 'XXXX'
+                }, {
+                date: '2016-05-02',
+                name: 'XXX',
+                address: 'XXXX'
+                }, {
+                date: '2016-05-04',
+                name: 'XXX',
+                address: 'XXXX'
+                }, {
+                date: '2016-05-01',
+                name: 'XXX',
+                address: 'XXXX'
+                }, {
+                date: '2016-05-08',
+                name: 'XXX',
+                address: 'XXXX'
+                }, {
+                date: '2016-05-06',
+                name: 'XXX',
+                address: 'XXXX'
+                }, {
+                date: '2016-05-07',
+                name: 'XXX',
+                address: 'XXXX'
+                }]
+            }
+            }
+        }
+        var Ctor = Vue.extend(Main)
+        new Ctor().$mount('#black-list')
       </script>
 </body>
 </html>
