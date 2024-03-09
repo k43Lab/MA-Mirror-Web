@@ -113,38 +113,84 @@
     </div>
 
     <!--黑名单-->
-    <div class="black-list" id="">
+    <div class="black-list">
         <div style="width: 800px;">
             <div style="color: white;font-size: 25px;"><i class='bx bx-edit-alt'></i> Black List | 黑名单</div>
             <div style="display: flex;justify-content: space-between;margin-top: 10px;">
                 <div class="black-list-1" style="margin-top: 10px;line-height: 1.9">
                     <div id="black-list">
                         <template>
-                          <el-table
+                            <el-table
                             :data="tableData"
-                            :header-cell-style="{
-                                background: '#fafafa', color: '#333', fontWeight: '600', fontSize: '14px', }"
-                            height="250"
-                            border
-                            style="width: 100%"> 
-                            <el-table-column
-                              prop="date"
-                              label="日期"
-                              width="180">
-                            </el-table-column>
-                            <el-table-column
-                              prop="name"
-                              label="姓名"
-                              width="180">
-                            </el-table-column>
-                            <el-table-column
-                              prop="address"
-                              label="地址">
-                            </el-table-column>
-                          </el-table>
+                            :header-cell-style="{ background: '#1a1a1a', color: 'rgb(171 171 171)', fontWeight: '600', fontSize: '14px' }"
+                            :row-style="{ background: '#1a1a1a' }"
+                            :border-style="{ borderColor: '#1a1a1a' }"
+                            height="350"
+                              style="width: 100%">
+                              <el-table-column
+                                prop="number"
+                                label="序号"
+                                width="180">
+                              </el-table-column>
+                              <el-table-column
+                                prop="name"
+                                label="滥用仓库"
+                                width="180">
+                              </el-table-column>
+                              <el-table-column
+                                prop="explain"
+                                label="说明">
+                              </el-table-column>
+                            </el-table>
                         </template>
                     </div>
                 </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!--页尾-->
+    <div class="end">
+        <div style="width: 900px;">
+            <div style="display: flex;margin-top: 10px;flex-direction: row;align-items: flex-start;justify-content: space-between;">
+                    <div style="height: 70px;width: auto; ">
+                        <img src="/k43lab.png" width="auto" height="100%" style="border-radius: 5px;">
+                    </div>
+
+                <div>
+                    <div class="end-tittle"><i class='bx bx-objects-horizontal-left bx-flip-horizontal' style="margin-right: 4px;"></i>关于k43Lab</div>
+                    <div class="end-link">
+                        <a href="https://k43lab.1l1.icu/about">说明</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="end-tittle"><i class='bx bxs-color bx-spin bx-flip-horizontal' style="margin-right: 4px;"></i>动态</div>
+                    <div class="end-link">
+                        <a href="https://github.com/k43Lab">Github</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="end-tittle"><i class='bx bx-book-content bx-flip-horizontal' style="margin-right: 4px;"></i>其他项目</div>
+                    <div class="end-link">
+                        <div><a href="https://github.com/k43Lab">MA Mirror</a></div>
+                        <div><a href="https://github.com/k43Lab">尽情期待</a></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="end-tittle"><i class='bx bx-user-pin bx-flip-horizontal' style="margin-right: 4px;"></i>联系我们</div>
+                    <div class="end-link">
+                        <div><a href="https://github.com/k43Lab">尽情期待</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div style="display: flex;width: 800px;justify-content: center;">
+            <div style="display: flex;justify-content: space-between;margin-top: 10px;">
+                <div style="font-size: 13px;color: #535353;">Copyright k43Lab © 2024 All Rights Reserved</div>
             </div>
             </div>
         </div>
@@ -213,39 +259,15 @@
       <script>
         var Main = {
             data() {
-            return {
+                return {
                 tableData: [{
-                date: 'XX',
-                name: 'XXX',
-                address: 'XXXX'
-                }, {
-                date: '2016-05-02',
-                name: 'XXX',
-                address: 'XXXX'
-                }, {
-                date: '2016-05-04',
-                name: 'XXX',
-                address: 'XXXX'
-                }, {
-                date: '2016-05-01',
-                name: 'XXX',
-                address: 'XXXX'
-                }, {
-                date: '2016-05-08',
-                name: 'XXX',
-                address: 'XXXX'
-                }, {
-                date: '2016-05-06',
-                name: 'XXX',
-                address: 'XXXX'
-                }, {
-                date: '2016-05-07',
-                name: 'XXX',
-                address: 'XXXX'
+                    number: '1',
+                    name: 'example',
+                    explain: 'example'
                 }]
+                }
             }
             }
-        }
         var Ctor = Vue.extend(Main)
         new Ctor().$mount('#black-list')
       </script>
