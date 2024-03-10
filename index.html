@@ -14,8 +14,20 @@
     <script src="//fnj.1l1.icu/unpkg/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='//fnj.1l1.icu/unpkg/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/index.css">
+    <script src="https://libs.afengim.com/libs/jquery-3.1.1/jquery-3.1.1.min.js" type="application/javascript"></script>
 </head>
 <body>
+    <div class="loaderbg">
+        <div class="spinner">
+          <div class="double rect1"></div>
+          <div class="double rect2"></div>
+          <div class="double rect3"></div>
+          <div class="double rect4"></div>
+          <div class="double rect5"></div>
+        </div>
+      </div>
+      
+
     <div id="menu" style="display: flex; justify-content: space-between; align-items: center;padding: 0px 20px 0px 20px;border-bottom: 1px solid #323030;">
         <div style="display: flex;align-items: center;">
             <img src="https://element.eleme.cn/favicon.ico" style="margin-right: 15px;" alt="MA Mirror" height="30px" width="30px">
@@ -23,12 +35,12 @@
         </div>
         
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="background-color: rgb(26 26 26)">
-            <el-menu-item index="1" class="menu-1">首页</el-menu-item>
+            <el-menu-item index="1" class="menu-1" disabled>首页</el-menu-item>
             <el-submenu index="2">
                 <template slot="title">使用</template>
-                <el-menu-item index="2-1" class="menu-2">CDN 站镜像</el-menu-item>
-                <el-menu-item index="2-2" class="menu-2">GitHub 文件下载</el-menu-item>
-                <el-menu-item index="2-3" class="menu-2">Github API 加速</el-menu-item>
+                <el-menu-item index="2-1" class="menu-2"><a href="/page/docs/cdn.html" target="_blank" style="text-decoration: none;color: #dfdfdf;">CDN 站镜像</a></el-menu-item>
+                <el-menu-item index="2-2" class="menu-2"><a href="/page/docs/github.html" target="_blank" style="text-decoration: none;color: #dfdfdf;">GitHub 文件下载</a></el-menu-item>
+                <el-menu-item index="2-3" class="menu-2"><a href="/page/docs/github.html" target="_blank" style="text-decoration: none;color: #dfdfdf;">Github API 加速</a></el-menu-item>
             </el-submenu>
             <el-menu-item index="3" class="menu-1">统计</el-menu-item>
             <el-menu-item index="4" class="menu-1">服务器状态</el-menu-item>
@@ -52,7 +64,7 @@
         </div>
         <div style="padding-top:50px;display: flex;">
             <button style="width: 200px;margin-right: 20px;">
-                <span>Let's Start</span>
+                <span><a href="./page/docs/index.html" style="text-decoration: none;color: #ffffff;">Let's Start</a></span>
             </button>
             <button style="width: 200px;">
                 <span>Know More</span>
@@ -115,7 +127,7 @@
     <!--黑名单-->
     <div class="black-list">
         <div style="width: 800px;">
-            <div style="color: white;font-size: 25px;"><i class='bx bx-edit-alt'></i> Black List | 黑名单</div>
+            <div style="color: white;font-size: 25px;"><i class='bx bx-objects-horizontal-center'></i> Black List | 黑名单</div>
             <div style="display: flex;justify-content: space-between;margin-top: 10px;">
                 <div class="black-list-1" style="margin-top: 10px;line-height: 1.9">
                     <div id="black-list">
@@ -196,6 +208,20 @@
         </div>
     </div>
 
+    <div id="down">
+        <template>
+          <el-backtop target=".page-component__scroll .el-scrollbar__wrap"></el-backtop>
+        </template>
+    </div>
+
+    <script>
+        // 加载
+        window.addEventListener('load', function() {
+            var loader = document.querySelector('.loaderbg');
+            loader.style.display = 'none';
+        });
+    </script>
+
       <script>
         var Main = {
             data() {
@@ -270,6 +296,10 @@
             }
         var Ctor = Vue.extend(Main)
         new Ctor().$mount('#black-list')
+      </script>
+
+      <script>
+        new Vue().$mount('#down')
       </script>
 </body>
 </html>

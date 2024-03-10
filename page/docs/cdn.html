@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MA Mirror(); | CDN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="//fnj.1l1.icu/unpkg/vue@2/dist/vue.js"></script>
+    <script src="//fnj.1l1.icu/unpkg/element-ui@2.15.14/lib/index.js"></script>
+    <link rel="stylesheet" href="//fnj.1l1.icu/unpkg/element-plus/dist/index.css" />
+    <link rel="stylesheet" href="//fnj.1l1.icu/unpkg/element-ui@2.15.14/lib/theme-chalk/index.css" />
+    <script src="//fnj.1l1.icu/unpkg/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='//fnj.1l1.icu/unpkg/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div class="loaderbg">
+        <div class="spinner">
+          <div class="double rect1"></div>
+          <div class="double rect2"></div>
+          <div class="double rect3"></div>
+          <div class="double rect4"></div>
+          <div class="double rect5"></div>
+        </div>
+    </div>
+
+    <div id="menu" style="display: flex; justify-content: space-between; align-items: center;padding: 0px 20px 0px 20px;border-bottom: 1px solid #323030;">
+        <div style="display: flex;align-items: center;">
+            <img src="https://element.eleme.cn/favicon.ico" style="margin-right: 15px;" alt="MA Mirror" height="30px" width="30px">
+            <p class="poppins-semibold" style="font-size: 15px;color: #ffffff;">MA Mirror</p>
+        </div>
+        
+        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" style="background-color: rgb(26 26 26)">
+            <el-menu-item index="1" class="menu-1" ><a href="/" target="_blank" style="text-decoration: none;color: #dfdfdf;">首页</a></el-menu-item>
+            <el-submenu index="2">
+                <template slot="title">使用</template>
+                <el-menu-item index="2-1" class="menu-2"><a href="/page/docs/cdn.html" target="_blank" style="text-decoration: none;color: #dfdfdf;">CDN 站镜像</a></el-menu-item>
+                <el-menu-item index="2-2" class="menu-2"><a href="/page/docs/github.html" target="_blank" style="text-decoration: none;color: #dfdfdf;">GitHub 文件下载</a></el-menu-item>
+                <el-menu-item index="2-3" class="menu-2"><a href="/page/docs/github.html" target="_blank" style="text-decoration: none;color: #dfdfdf;">Github API 加速</a></el-menu-item>
+            </el-submenu>
+            <el-menu-item index="3" class="menu-1">统计</el-menu-item>
+            <el-menu-item index="4" class="menu-1">服务器状态</el-menu-item>
+            <el-menu-item index="5" class="menu-1">赞助</el-menu-item>
+            <el-divider direction="vertical"></el-divider>
+            <el-menu-item index="6" class="menu-1"><a href="https://github.com/k43Lab" target="_blank" ><i class='bx bxl-github'style="font-size: 26px;"></i></a></el-menu-item>
+        </el-menu>
+    </div>
+
+    <div class="docs" style="margin-top: 50px;">
+        <div style="width: 1000px;display: flex;width: 1000px;flex-direction: row;justify-content: space-between;">
+            <div class="doc" style="max-width: 600px;">
+                <div class="doc-tittle">FAST NYA JUST | CDN 镜像</div>
+                    <div class="doc-tittle-1"><i class='bx bxs-right-top-arrow-circle' style="margin-right: 6px;"></i>什么是 FNJ？</div>
+                    <div class="doc-tittle-2">FNJ 是 FAST NYA JUST 缩写，他是 k43Lab 团队推出的一项加速服务，目的是帮助开发者解决前端静态资源国内访问效果极差的问题。目前我们仅对<span class="special-world">https://unpkg.com/</span>，<span class="special-world">https://cdn.jsdelivr.net/</span>，<span class="special-world">https://cdnjs.cloudflare.com/</span>加速，缓存时效12小时。</div>
+                    <div class="doc-tittle-1"><i class='bx bxs-right-top-arrow-circle' style="margin-right: 6px;"></i>使用</div>
+                    <div class="doc-tittle-2">
+                        <div style="    height: 0px;">
+                            <div id="list-1">
+                                <template>
+                                    <el-table
+                                    :data="tableData"
+                                    :header-cell-style="{ background: '#1a1a1a', color: 'rgb(171 171 171)', fontWeight: '600', fontSize: '14px' }"
+                                    :row-style="{ background: '#1a1a1a' }"
+                                    :border-style="{ borderColor: '#1a1a1a' }"
+                                    height="200"
+                                    style="width: 100%">
+                                    <el-table-column
+                                        prop="number"
+                                        label="序号"
+                                        width="70">
+                                    </el-table-column>
+                                    <el-table-column
+                                        prop="name"
+                                        label="镜像地址"
+                                        width="240">
+                                    </el-table-column>
+                                    <el-table-column
+                                        prop="explain"
+                                        label="回源地址">
+                                    </el-table-column>
+                                    </el-table>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="guide">
+                <div class="guide-link-1">FAST NYA JUST | CDN 镜像</div>
+                <div class="guide-ui">
+                    <div class="guide-link-2">什么是 FNJ？</div>
+                    <div class="guide-link-2">使用</div>
+                        <div class="guide-ui-2">
+                            <div class="guide-link-3">unpkg.com</div>
+                            <div class="guide-link-3">cdn.jsdelivr.net</div>
+                            <div class="guide-link-3">cdnjs.cloudflare.com</div>
+                        </div>
+                    <div class="guide-link-2">其他</div>
+                    <div class="guide-link-2">要求</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div style="display: flex;width: 800px;justify-content: center;">
+            <div style="display: flex;justify-content: space-between;margin-bottom: 10px;position: absolute;bottom: 0px;">
+                <div style="font-size: 13px;color: #535353;">Copyright k43Lab © 2024 All Rights Reserved</div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 加载
+        window.addEventListener('load', function() {
+            var loader = document.querySelector('.loaderbg');
+            loader.style.display = 'none';
+        });
+    </script>
+
+    <script>
+        var Main = {
+            data() {
+            return {
+                activeIndex: '1',
+                activeIndex2: '1'
+            };
+            },
+            methods: {
+            handleSelect(key, keyPath) {
+                console.log(key, keyPath);
+            }
+            }
+        }
+        var Ctor = Vue.extend(Main)
+        new Ctor().$mount('#menu')
+    </script>
+
+    <script>
+        var Main = {
+            data() {
+                return {
+                tableData: [{
+                    number: '1',
+                    name: 'https://fnj.1l1.icu/unpkg/',
+                    explain: 'https://unpkg.com/'
+                },{
+                    number: '2',
+                    name: 'https://fnj.1l1.icu/jsdelivr/',
+                    explain: 'https://cdn.jsdelivr.net/'
+                },{
+                    number: '3',
+                    name: 'https://fnj.1l1.icu/cdnjs/',
+                    explain: 'https://cdnjs.cloudflare.com/'
+                }]
+                }
+            }
+            }
+        var Ctor = Vue.extend(Main)
+        new Ctor().$mount('#list-1')
+    </script>
+</body>
+</html>
