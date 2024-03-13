@@ -609,3 +609,46 @@ button:hover::after {
   margin-left: 30px;
   line-height: 1.8;
 }
+
+.code-example {
+  margin-top: 15px;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  background-color: #333333;
+  font-size: 12px;
+  position: relative; /* 添加相对定位 */
+}
+
+.code-example > #code-example-1 > #code-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+
+.code-link{
+  right: 0;
+  top: 0;
+  position: absolute;
+  z-index: 10;
+  border-radius: 5px;
+  font-size: 10px;
+  padding: 5px;
+  display: inline-block;
+  background-color: gray;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.gray {
+  color: gray;
+}

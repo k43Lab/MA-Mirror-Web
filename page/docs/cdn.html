@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MA Mirror(); | CDN</title>
+    <title>MA Mirror();</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -14,6 +14,12 @@
     <script src="//fnj.1l1.icu/unpkg/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='//fnj.1l1.icu/unpkg/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/css/index.css">
+
+    <script src="https://fnj.1l1.icu/jsdelivr/npm/prismjs"></script>
+    <script src="https://fnj.1l1.icu/jsdelivr/npm/vue-prism-editor"></script>    
+    <link href="https://fnj.1l1.icu/jsdelivr/npm/prism-themes/themes/prism-tomorrow.css" rel="stylesheet">
+    <!-- 引入 Vue Prism Editor 样式 -->
+    <link href="https://fnj.1l1.icu/jsdelivr/npm/vue-prism-editor/dist/VuePrismEditor.css" rel="stylesheet">
 </head>
 <body>
     <div class="loaderbg">
@@ -48,15 +54,14 @@
         </el-menu>
     </div>
 
-    <div class="docs" style="margin-top: 50px;">
-        <div style="width: 1000px;display: flex;width: 1000px;flex-direction: row;justify-content: space-between;">
+    <div class="docs" style="margin-top: 50px;margin-bottom: 50px;">
+        <div style="width: 1000px;display: flex;width: 1000px;flex-direction: row;justify-content: space-between;align-items: flex-start;">
             <div class="doc" style="max-width: 600px;">
                 <div class="doc-tittle">FAST NYA JUST | CDN 镜像</div>
                     <div class="doc-tittle-1"><i class='bx bxs-right-top-arrow-circle' style="margin-right: 6px;"></i>什么是 FNJ？</div>
-                    <div class="doc-tittle-2">FNJ 是 FAST NYA JUST 缩写，他是 k43Lab 团队推出的一项加速服务，目的是帮助开发者解决前端静态资源国内访问效果极差的问题。目前我们仅对<span class="special-world">https://unpkg.com/</span>，<span class="special-world">https://cdn.jsdelivr.net/</span>，<span class="special-world">https://cdnjs.cloudflare.com/</span>加速，缓存时效12小时。</div>
+                    <div class="doc-tittle-2">FNJ 是 FAST NYA JUST 缩写，他是 k43Lab 团队推出的一项加速服务，目的是帮助开发者解决前端静态资源国内访问效果极差的问题。目前我们仅对<span class="special-world">https://unpkg.com/</span>，<span class="special-world">https://fnj.1l1.icu/jsdelivr/</span>，<span class="special-world">https://cdnjs.cloudflare.com/</span>加速，缓存时效12小时。</div>
                     <div class="doc-tittle-1"><i class='bx bxs-right-top-arrow-circle' style="margin-right: 6px;"></i>使用</div>
                     <div class="doc-tittle-2">
-                        <div style="    height: 0px;">
                             <div id="list-1">
                                 <template>
                                     <el-table
@@ -83,6 +88,15 @@
                                     </el-table>
                                 </template>
                             </div>
+                        <div style="margin-top: 10px;">操作很简单，将访问地址的开头替换成镜像地址即可，例如您正在使用的MA Mirror官网，全站使用FNJ镜像，可以F12查看。如果您需要访问<span class="special-world">https://unpkg.com/vue@2/dist/vue.js</span>，只需要将<span class="special-world">https://unpkg.com</span>写成<span class="special-world">https://fnj.1l1.icu/unpkg</span>，如<span class="special-world">https://fnj.1l1.icu/unpkg/vue@2/dist/vue.js</span>其他的也一样。</div>
+                        <div style="margin-top: 15px;">下面是一个基本的示例：</div>
+                        <div class="code-example">
+                            <div id="code-example-1">
+                                <div class="code-link">HTML</div>
+                                <vue-prism-editor v-model="code" language="javascript" theme="VuePrismEditor"></vue-prism-editor>
+                                <div style="    letter-spacing: 1.5px;">{{code}}</div>
+                                <div style="    letter-spacing: 1.5px;">{{code2}}</div>
+                              </div>
                         </div>
                     </div>
                 </div>
@@ -105,8 +119,8 @@
     </div>
 
     <div class="footer">
-        <div style="display: flex;width: 800px;justify-content: center;">
-            <div style="display: flex;justify-content: space-between;margin-bottom: 10px;position: absolute;bottom: 0px;">
+        <div style="display: flex;width: 800px;justify-content: center;    height: 20px;">
+            <div style="display: flex;justify-content: space-between;margin-bottom: 10px;position: absolute;">
                 <div style="font-size: 13px;color: #535353;">Copyright k43Lab © 2024 All Rights Reserved</div>
             </div>
             </div>
@@ -150,7 +164,7 @@
                 },{
                     number: '2',
                     name: 'https://fnj.1l1.icu/jsdelivr/',
-                    explain: 'https://cdn.jsdelivr.net/'
+                    explain: 'https://fnj.1l1.icu/jsdelivr/'
                 },{
                     number: '3',
                     name: 'https://fnj.1l1.icu/cdnjs/',
@@ -162,5 +176,16 @@
         var Ctor = Vue.extend(Main)
         new Ctor().$mount('#list-1')
     </script>
+
+    <script>
+        new Vue({
+        el: '#code-example-1',
+        data: {
+            code: "<script src='//fnj.1l1.icu/unpkg/element-ui@2.15.14/lib/index.js'>",
+            code2: "<link rel='stylesheet' href='//fnj.1l1.icu/unpkg/element-plus/dist/index.css' />"
+        }
+        });
+    </script>
+
 </body>
 </html>
