@@ -58,9 +58,9 @@
     <div class="docs" style="margin-top: 50px;margin-bottom: 50px;">
         <div style="width: 1000px;display: flex;width: 1000px;flex-direction: row;justify-content: space-between;align-items: flex-start;">
             <div class="doc" style="max-width: 600px;">
-                <div class="doc-tittle">FAST NYA JUST | CDN 镜像</div>
-                    <div class="doc-tittle-1" id="docs-1"><i class='bx bxs-right-top-arrow-circle' style="margin-right: 6px;"></i>什么是 FNJ？</div>
-                    <div class="doc-tittle-2">FNJ 是 FAST NYA JUST 缩写，他是 k43Lab 团队推出的一项加速服务，目的是帮助开发者解决前端静态资源国内访问效果极差的问题。目前我们仅对<span class="special-world">https://unpkg.com/</span>，<span class="special-world">https://fnj.1l1.icu/jsdelivr/</span>，<span class="special-world">https://cdnjs.cloudflare.com/</span>加速，缓存时效12小时。</div>
+                <div class="doc-tittle poppins-semibold" >Github 加速</div>
+                    <div class="doc-tittle-1" id="docs-1"><i class='bx bxs-right-top-arrow-circle' style="margin-right: 6px;"></i>什么是 Github 加速？</div>
+                    <div class="doc-tittle-2">这是一项对Github文件以及api进行国内加速的服务，主要针对解决国内无法访问Github问题。</div>
                     <div class="doc-tittle-1" id="docs-2"><i class='bx bxs-right-top-arrow-circle' style="margin-right: 6px;"></i>使用</div>
                     <div class="doc-tittle-2">
                             <div id="list-1">
@@ -70,7 +70,6 @@
                                     :header-cell-style="{ background: '#1a1a1a', color: 'rgb(171 171 171)', fontWeight: '600', fontSize: '14px' }"
                                     :row-style="{ background: '#1a1a1a' }"
                                     :border-style="{ borderColor: '#1a1a1a' }"
-                                    height="200"
                                     style="width: 100%">
                                     <el-table-column
                                         prop="number"
@@ -89,16 +88,7 @@
                                     </el-table>
                                 </template>
                             </div>
-                        <div style="margin-top: 10px;">操作很简单，将访问地址的开头替换成镜像地址即可，例如您正在使用的MA Mirror官网，全站使用FNJ镜像，可以F12查看。如果您需要访问<span class="special-world">https://unpkg.com/vue@2/dist/vue.js</span>，只需要将<span class="special-world">https://unpkg.com</span>写成<span class="special-world">https://fnj.1l1.icu/unpkg</span>，如<span class="special-world">https://fnj.1l1.icu/unpkg/vue@2/dist/vue.js</span>其他的也一样。</div>
-                        <div style="margin-top: 15px;">下面是一个基本的示例：</div>
-                        <div class="code-example">
-                            <div id="code-example-1">
-                                <div class="code-link">HTML</div>
-                                <vue-prism-editor v-model="code" language="javascript" theme="VuePrismEditor"></vue-prism-editor>
-                                <div style="    letter-spacing: 1.5px;">{{code}}</div>
-                                <div style="    letter-spacing: 1.5px;">{{code2}}</div>
-                              </div>
-                        </div>
+                        <div style="margin-top: 10px;">如果您要对<span class="special-world">https://github.com/RecursiveG/UniSkinMod/releases/download/1.4-dev2/UniSkinMod-1.9-forge1865-1.4-dev2.jar</span>，那么就在这个地址前面加上<span class="special-world">https://proxy-gh.1l1.icu/</span>字样，即<span class="special-world">https://proxy-gh.1l1.icu/https://github.com/RecursiveG/UniSkinMod/releases/download/1.4-dev2/UniSkinMod-1.9-forge1865-1.4-dev2.jar</span>，对于api的加速操作和这个一样。</div>
                         <div class="doc-tittle-1" id="docs-3"><i class='bx bxs-right-top-arrow-circle' style="margin-right: 6px;"></i>其他</div>
                         <div class="doc-tittle-2">下方是itdog的多地Ping值的截图（测试于2024.3.15），点击可放大。</div>
                         <div id="doc-img" style="    margin-top: 20px;">
@@ -112,6 +102,15 @@
                         </div>
                         <div class="doc-tittle-1" id="docs-4"><i class='bx bxs-right-top-arrow-circle' style="margin-right: 6px;"></i>要求</div>
                         <div class="doc-tittle-2">我们严禁对利用Github仓库作为图床，或加速私人字体，私人图片视频媒体资源文件等进行加速，我们会定期严查这类资源，并进行封禁。</div>
+                        <div style="display: flex;border-radius: 10px;background: #ffd8d2;padding: 20px;margin-top: 20px;flex-direction: row;justify-content: flex-start;align-items: center;">
+                            <div style="margin-right: 10px;">
+                                <i class='bx bxs-error bx-sm' style="margin-right: 5px;color: rgb(251, 48, 48);"></i> 
+                            </div>
+                            <div>
+                                <div class="poppins-semibold">Waring 注意</div>
+                                <div style="    font-size: 13px;">这只是对文件以及API加速，并不是所谓的Github镜像站。</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="waline">
                         <div id="waline"></div>
@@ -126,14 +125,13 @@
                     </div>
                 </div>
             <div class="guide">
-                <div class="guide-link-1">FAST NYA JUST | CDN 镜像</div>
+                <div class="guide-link-1">Github 加速</div>
                 <div class="guide-ui">
-                    <div class="guide-link-2" onclick="scrollToSection('docs-1')">什么是 FNJ？</div>
+                    <div class="guide-link-2" onclick="scrollToSection('docs-1')">什么是 Github 加速？</div>
                     <div class="guide-link-2" onclick="scrollToSection('docs-2')">使用</div>
                         <div class="guide-ui-2">
-                            <div class="guide-link-3">unpkg.com</div>
-                            <div class="guide-link-3">cdn.jsdelivr.net</div>
-                            <div class="guide-link-3">cdnjs.cloudflare.com</div>
+                            <div class="guide-link-3">文件加速</div>
+                            <div class="guide-link-3">API 加速</div>
                         </div>
                     <div class="guide-link-2" onclick="scrollToSection('docs-3')">其他</div>
                     <div class="guide-link-2" onclick="scrollToSection('docs-4')">要求</div>
@@ -184,16 +182,12 @@
                 return {
                 tableData: [{
                     number: '1',
-                    name: 'https://fnj.1l1.icu/unpkg/',
-                    explain: 'https://unpkg.com/'
+                    name: '{文件地址}',
+                    explain: 'https://proxy-gh.1l1.icu/{文件地址}'
                 },{
                     number: '2',
-                    name: 'https://fnj.1l1.icu/jsdelivr/',
-                    explain: 'https://fnj.1l1.icu/jsdelivr/'
-                },{
-                    number: '3',
-                    name: 'https://fnj.1l1.icu/cdnjs/',
-                    explain: 'https://cdnjs.cloudflare.com/'
+                    name: '{api地址}',
+                    explain: 'https://api-gh.1l1.icu/{api地址}'
                 }]
                 }
             }
@@ -203,22 +197,12 @@
     </script>
 
     <script>
-        new Vue({
-        el: '#code-example-1',
-        data: {
-            code: "<script src='//fnj.1l1.icu/unpkg/element-ui@2.15.14/lib/index.js'>",
-            code2: "<link rel='stylesheet' href='//fnj.1l1.icu/unpkg/element-plus/dist/index.css' />"
-        }
-        });
-    </script>
-
-    <script>
         var Main = {
             data() {
               return {
-                url: 'https://cdn.img.shanrenyi.top/i/2024/03/15/a720017c-ae68-6056-7b85-10ceb441f2d3.png',
+                url: 'https://cdn.img.shanrenyi.top/i/2024/03/16/36eeaebb-35f8-a18f-19dc-621aa87271eb.png',
                 srcList: [
-                  'https://cdn.img.shanrenyi.top/i/2024/03/15/07739122-e7e6-00f2-8a58-685d22ac52a2.jpeg'
+                  'https://cdn.img.shanrenyi.top/i/2024/03/16/747fce2d-ca28-5d26-aee1-41bcee1ef9ab.jpeg'
                 ]
               }
             }

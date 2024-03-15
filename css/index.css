@@ -598,15 +598,14 @@ button:hover::after {
 }
 
 .doc-tittle-1{
-  margin-top: 15px;
+  margin-top: 30px;
   font-size: 20px;
   color: #ffffff;
 }
 
 .doc-tittle-2{
   color: #595959;
-  margin-top: 20px;
-  margin-left: 30px;
+  margin-top: 6px;
   line-height: 1.8;
 }
 
@@ -641,14 +640,134 @@ button:hover::after {
   background-color: gray;
 }
 
-.red {
-  color: red;
+.el-image {
+  border-radius: 4px;
 }
 
-.blue {
-  color: blue;
+#return {
+  height: 100%;
+ }
+ .return-button {
+    height: 100%;
+ } 
+ .backtop {
+     overflow: scroll;
+     height: 100%;
+ } 
+
+ .waline {
+  padding-top: 15px;
+  border-top: 1px solid #545454;
+  margin-top: 50px;
 }
 
-.gray {
-  color: gray;
+[data-waline] a {
+  color: #a0a0a0 !important;
+}
+
+.wl-avatar img {
+  border-radius: 4px !important;
+}
+
+.wl-avatar {
+  border-radius: 4px !important;
+}
+
+.wl-logout-btn {
+  z-index: 10 !important;
+}
+
+.wl-panel {
+  border: 0px solid !important;
+  border-radius: 4px !important;
+  background: #2f2e2e !important;
+}
+
+.wl-editor:focus, .wl-input:focus {
+  background: #2f2e2e !important;
+}
+
+.wl-editor {
+  margin: 0px !important;
+  padding: 5px !important;
+  border-radius: 4px !important;
+  background: #2f2e2e !important; 
+}
+
+.wl-action.active {
+  color: #6e42ce !important;
+}
+
+.wl-action:hover {
+  color: #6e42ce !important;
+}
+
+.wl-btn.primary {
+  border-color: #6e42ce !important;
+  background: #6e42ce !important;
+  color: #a5a5a5 !important;
+}
+
+.wl-btn.primary:hover, .wl-btn.primary:active {
+  border-color: #6e42ce !important;
+  background: #6e42ce !important;
+}
+
+.wl-count {
+  color: #6e42ce !important;
+}
+
+.wl-sort li.active {
+  color: #6e42ce !important;
+}
+
+.wl-cards .wl-user .wl-user-avatar {
+  border-radius: 4px !important;
+}
+
+.wl-card {
+  margin-left: 10px !important; 
+}
+
+.wl-card .wl-badge {
+  border: 1px solid #6e42ce !important;
+  color: #6e42ce !important;
+}
+
+.wl-card .wl-meta>span {
+  border-radius: 4px !important;
+  background: #2f2e2e !important;
+}
+
+.wl-cards{
+  border-radius: 10px;
+  background-color: #363636;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px
+}
+
+.wl-card .wl-delete, .wl-card .wl-like, .wl-card .wl-reply, .wl-card .wl-edit {
+  color: #a0a0a0 !important;
+}
+
+.wl-card .wl-delete:hover, .wl-card .wl-like:hover, .wl-card .wl-reply:hover, .wl-card .wl-edit:hover {
+  color: #6e42ce !important;
+}
+
+[data-waline] p {
+  color: #c1c1c1 !important;
+}
+
+.wl-btn:hover, .wl-btn:active {
+  border-color: #6e42ce !important;
+  color: #6e42ce !important;
+}
+
+.wl-header label {
+  color: #a0a0a0 !important;
+}
+
+.wl-header input {
+  font-size: 14px !important;
 }
